@@ -1872,7 +1872,7 @@ export function Settings() {
           {/* 新增组件 */}
           <ListItem
             title="推荐模型（性能第一梯队，2025年6月26日）"
-            subTitle="claude-sonnet-4-20250514, claude-opus-4-20250514, gemini-2.5-pro"
+            subTitle="claude-sonnet-4-20250514, claude-opus-4-20250514"
             className={styles.highlight} // 加上这个类
           ></ListItem>
         </List>
