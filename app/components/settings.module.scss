@@ -78,3 +78,11 @@
     overflow:visible ;
   }
 }
+
+// 新增样式（bull）
+.highlight {
+  background-color: #f5f7fa; // 柔和背景
+  border: 1px solid #409eff; // 蓝色边框
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(64, 158, 255, 0.3);
+}

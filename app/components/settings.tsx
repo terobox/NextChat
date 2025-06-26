@@ -49,8 +49,7 @@ import Locale, {
   changeLang,
   getLang,
 } from "../locales";
-import { copyToClipboard, clientUpdate, semverCompare } from "../utils";
-import Link from "next/link";
+import { copyToClipboard, semverCompare } from "../utils";
 import {
   Anthropic,
   Azure,
@@ -71,7 +70,6 @@ import {
   UPDATE_URL,
   Stability,
   Iflytek,
-  SAAS_CHAT_URL,
   ChatGLM,
   DeepSeek,
   SiliconFlow,
@@ -696,23 +694,18 @@ export function Settings() {
   const saasStartComponent = (
     <ListItem
       className={styles["subtitle-button"]}
-      title={
-        Locale.Settings.Access.SaasStart.Title +
-        `${Locale.Settings.Access.SaasStart.Label}`
-      }
-      subTitle={Locale.Settings.Access.SaasStart.SubTitle}
+      title="OpenKey"
+      subTitle="API"
     >
       <IconButton
-        aria={
-          Locale.Settings.Access.SaasStart.Title +
-          Locale.Settings.Access.SaasStart.ChatNow
-        }
+        aria={"giao" + "giao"}
         icon={<FireIcon />}
         type={"primary"}
-        text={Locale.Settings.Access.SaasStart.ChatNow}
+        text="立即访问"
         onClick={() => {
           trackSettingsPageGuideToCPaymentClick();
-          window.location.href = SAAS_CHAT_URL;
+          // window.location.href = "https://openkey.cloud";
+          window.open("https://openkey.cloud", "_blank");
         }}
       />
     </ListItem>
@@ -1510,7 +1503,7 @@ export function Settings() {
             </Popover>
           </ListItem>
 
-          <ListItem
+          {/* <ListItem
             title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}
             subTitle={
               checkingUpdate
@@ -1541,7 +1534,7 @@ export function Settings() {
                 onClick={() => checkUpdate(true)}
               />
             )}
-          </ListItem>
+          </ListItem> */}
 
           <ListItem title={Locale.Settings.SendKey}>
             <Select
@@ -1775,7 +1768,9 @@ export function Settings() {
         </List>
 
         <List id={SlotID.CustomModel}>
-          {saasStartComponent}
+          {/* nextchat 广告栏目 */}
+          {/* {saasStartComponent} */}
+
           {accessCodeComponent}
 
           {!accessStore.hideUserApiKey && (
@@ -1871,6 +1866,15 @@ export function Settings() {
               }
             ></input>
           </ListItem>
+        </List>
+
+        <List>
+          {/* 新增组件 */}
+          <ListItem
+            title="推荐模型（性能第一梯队，2025年6月26日）"
+            subTitle="claude-sonnet-4-20250514, claude-opus-4-20250514, gemini-2.5-pro"
+            className={styles.highlight} // 加上这个类
+          ></ListItem>
         </List>
 
         <List>

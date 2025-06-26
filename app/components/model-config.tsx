@@ -49,6 +49,7 @@ export function ModelConfigList(props: {
           ))}
         </Select>
       </ListItem>
+
       <ListItem
         title={Locale.Settings.Temperature.Title}
         subTitle={Locale.Settings.Temperature.SubTitle}
