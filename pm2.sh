@@ -1,3 +1,4 @@
+# 执行脚本时确保在项目根目录
 rm -rf .next
 yarn install
 yarn build
